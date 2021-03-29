@@ -17,13 +17,13 @@ def get_url():
     return url
 
 def gimmedoge(update, context):
-    bot = telegram.Bot(token = "1715900112:AAG4nBwyRHugzDAu5FKoRo-xzIoNOkb-5EY")
+    bot = telegram.Bot(token = "your_token")
     url = get_url()
     chat_id = update.message.chat_id
     bot.send_photo(chat_id= chat_id, photo = url)
 
 def main():
-    updater = Updater("1715900112:AAG4nBwyRHugzDAu5FKoRo-xzIoNOkb-5EY",use_context = True)
+    updater = Updater("your_token",use_context = True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("gimmedoge",gimmedoge))
     dp.add_handler(CommandHandler("start",start))
